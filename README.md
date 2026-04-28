@@ -1,6 +1,8 @@
-# kape.nvim
+# kape-nvim
 
-A warm, dark Neovim colorscheme with muted earth tones and carefully tuned contrast — built for long coding sessions.
+A warm, dark Neovim colorscheme with a warm dark color scheme rooted in coffee, earth, and amber — built for long coding sessions.
+
+> Part of the [Kape](https://github.com/gabiuz/kape) color system.
 
 ## Requirements
 
