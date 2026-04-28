@@ -1,8 +1,9 @@
-local M = function(p)
+local M = function(p, opts)
+	local bg = opts.transparent and "NONE" or p.background
 	local highlights = {
 
 		-- Base
-		BufferLineFill = { bg = p.background },
+		BufferLineFill = { bg = bg },
 		BufferLineBackground = { fg = p.third_text, bg = p.surface0 },
 		BufferLineTab = { fg = p.third_text, bg = p.surface0 },
 		BufferLineTabClose = { fg = p.red, bg = p.surface0 },
@@ -59,8 +60,8 @@ local M = function(p)
 		BufferLinePickSelected = { fg = p.red, bg = p.background, bold = true },
 	}
 
-	for group, opts in pairs(highlights) do
-		vim.api.nvim_set_hl(0, group, opts)
+	for group, hl_opts in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, hl_opts)
 	end
 end
 

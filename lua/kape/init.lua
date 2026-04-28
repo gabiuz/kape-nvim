@@ -1,21 +1,28 @@
 local M = {}
 
-local function load_integration(name, p)
+local function load_integration(name, p, opts)
 	local ok, integration = pcall(require, "kape.highlights.integrations." .. name)
 	if ok then
-		integration(p)
+		integration(p, opts)
 	end
 end
 
-function M.setup()
+M.options = {
+	transparent = false,
+}
+
+function M.setup(opts)
+	M.options = vim.tbl_deep_extend("force", M.options, opts or {})
 	local p = require("kape.palette").palette
 
-	require("kape.highlights.base")(p)
+	vim.o.termguicolors = true
+
+	require("kape.highlights.base")(p, M.options)
 	require("kape.highlights.treesitter")(p)
 
-	load_integration("telescope", p)
-	load_integration("nvimtree", p)
-	load_integration("bufferline", p)
+	load_integration("telescope", p, M.options)
+	load_integration("nvimtree", p, M.options)
+	load_integration("bufferline", p, M.options)
 	load_integration("lualine", p)
 end
 

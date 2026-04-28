@@ -1,11 +1,12 @@
-local M = function(p)
+local M = function(p, opts)
+	local bg = opts.transparent and "NONE" or p.surface0
 	local highlights = {
 
 		-- Base
-		NvimTreeNormal = { fg = p.foreground, bg = p.surface0 },
-		NvimTreeNormalFloat = { fg = p.foreground, bg = p.surface0 },
-		NvimTreeNormalNC = { fg = p.second_text, bg = p.surface0 },
-		NvimTreeEndOfBuffer = { fg = p.surface0 },
+		NvimTreeNormal = { fg = p.foreground, bg = bg },
+		NvimTreeNormalFloat = { fg = p.foreground, bg = bg },
+		NvimTreeNormalNC = { fg = p.second_text, bg = bg },
+		NvimTreeEndOfBuffer = { fg = bg },
 		NvimTreeWinSeparator = { fg = p.surface2, bg = p.background },
 		NvimTreeCursorLine = { bg = p.surface1 },
 		NvimTreeCursorColumn = { bg = p.surface1 },
@@ -54,8 +55,8 @@ local M = function(p)
 		NvimTreeLiveFilterValue = { fg = p.foreground, bold = true },
 	}
 
-	for group, opts in pairs(highlights) do
-		vim.api.nvim_set_hl(0, group, opts)
+	for group, hl_opts in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, hl_opts)
 	end
 end
 

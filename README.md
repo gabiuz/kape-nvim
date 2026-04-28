@@ -48,6 +48,15 @@ colorscheme kape
 vim.cmd.colorscheme("kape")
 ```
 
+To enable transparent backgrounds, call `setup()` before applying the colorscheme:
+
+```lua
+require("kape").setup({
+  transparent = true, -- default: false
+})
+vim.cmd.colorscheme("kape")
+```
+
 ## Supported Plugins
 
 | Plugin | Status |
