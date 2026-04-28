@@ -13,7 +13,7 @@ A warm, dark Neovim colorscheme with muted earth tones and carefully tuned contr
 
 ```lua
 {
-  "gabiuz/kape.nvim",
+  "gabiuz/kape-nvim",
   lazy = false,
   priority = 1000,
   config = function()
@@ -26,7 +26,7 @@ A warm, dark Neovim colorscheme with muted earth tones and carefully tuned contr
 
 ```lua
 use {
-  "gabiuz/kape.nvim",
+  "gabiuz/kape-nvim",
   config = function()
     vim.cmd.colorscheme("kape")
   end,
@@ -36,7 +36,7 @@ use {
 ### [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'gabiuz/kape.nvim'
+Plug 'gabiuz/kape-nvim'
 colorscheme kape
 ```
 
