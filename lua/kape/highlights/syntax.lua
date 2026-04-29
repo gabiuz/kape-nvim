@@ -18,7 +18,7 @@ local M = function(p, opts)
 
 		-- Literals
 		String         = { fg = p.green },
-		Character      = { fg = p.fg0 },
+		Character      = { fg = p.yellow },
 		Number         = { fg = p.yellow },
 		Float          = { fg = p.yellow },
 		Boolean        = { fg = p.yellow },
