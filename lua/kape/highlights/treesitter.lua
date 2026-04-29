@@ -83,6 +83,8 @@ local M = function(p, opts)
 		TSVariableBuiltin = "KapeYellowItalic", -- builtin variable (self, this…)
 		TSModuleInfoGood = "KapeGreen",
 		TSModuleInfoBad = "KapeRed",
+		TSImportBlock = "KapeYellow",
+		TSIdentifierName = "KapeYellow",
 	}
 	for group, target in pairs(legacy) do
 		hl(0, group, { link = target })

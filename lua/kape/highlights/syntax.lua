@@ -28,7 +28,7 @@ local M = function(p, opts)
 		SpecialComment = com,
 
 		-- Keywords
-		Statement   = kw,
+		Statement   = {fg = p.red},
 		Conditional = kw,
 		Repeat      = kw,
 		Keyword     = {fg = p.red},
