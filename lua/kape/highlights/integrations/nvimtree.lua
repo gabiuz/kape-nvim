@@ -35,9 +35,7 @@ local M = function(p, opts)
 		NvimTreeGitDeleted = { fg = p.red },
 		NvimTreeGitIgnored = { fg = p.third_text },
 
-		-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 		-- Diagnostics
-		-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 		NvimTreeDiagnosticErrorIcon = { fg = p.red },
 		NvimTreeDiagnosticWarningIcon = { fg = p.yellow },
 		NvimTreeDiagnosticInfoIcon = { fg = p.blue },

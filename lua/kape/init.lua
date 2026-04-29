@@ -18,7 +18,6 @@ function M.setup(opts)
 	vim.o.termguicolors = true
 
 	require("kape.highlights.base")(p, M.options)
-	require("kape.highlights.treesitter")(p)
 
 	load_integration("telescope", p, M.options)
 	load_integration("nvimtree", p, M.options)

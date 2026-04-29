@@ -32,8 +32,8 @@ local M = function(p)
 		LualineInactiveC = { fg = p.third_text, bg = p.background },
 	}
 
-	for group, opts in pairs(highlights) do
-		vim.api.nvim_set_hl(0, group, opts)
+	for group, hl_opts in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, hl_opts)
 	end
 end
 
