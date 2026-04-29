@@ -10,7 +10,7 @@ local M = function(p, opts)
 		-- Basics
 		Comment        = { fg = p.grey0, italic = italic },
 		SpecialComment = { fg = p.grey0, italic = italic },
-		Delimiter      = { fg = p.fg0 },
+		Delimiter      = { fg = p.yellow },
 		Ignore         = { fg = p.grey0 },
 		Underlined     = { underline = true },
 		Error          = { fg = p.violet },
@@ -18,7 +18,7 @@ local M = function(p, opts)
 
 		-- Literals
 		String         = { fg = p.green },
-		Character      = { fg = p.green },
+		Character      = { fg = p.fg0 },
 		Number         = { fg = p.yellow },
 		Float          = { fg = p.yellow },
 		Boolean        = { fg = p.yellow },
