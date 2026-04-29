@@ -31,7 +31,7 @@ local M = function(p, opts)
 		Statement   = kw,
 		Conditional = kw,
 		Repeat      = kw,
-		Keyword     = kw,
+		Keyword     = {fg = p.red},
 		Exception   = kw,
 		Typedef     = kw,
 		Label       = str, -- "default:", "case:" labels — attr-adjacent
