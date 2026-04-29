@@ -17,7 +17,7 @@ local M = function(p, opts)
 		Todo           = { fg = bg, bg = p.blue, bold = true },
 
 		-- Literals
-		String         = { fg = p.green },
+		String         = { fg = p.orange },
 		Character      = { fg = p.yellow },
 		Number         = { fg = p.yellow },
 		Float          = { fg = p.yellow },
@@ -25,7 +25,7 @@ local M = function(p, opts)
 
 		-- Identifiers
 		Identifier     = { fg = p.yellow },
-		Function       = { fg = p.green, bold = true },
+		Function       = { fg = p.orange, bold = true },
 
 		-- Statements & keywords
 		Statement      = { fg = p.violet },
