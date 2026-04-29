@@ -38,7 +38,7 @@ local M = function(p, opts)
 		Tag         = kw,  -- HTML/JSX tag names
 
 		-- Strings & string-like
-		String      = str,
+		String      = {fg = p.green},
 		Character   = var, -- single char literal
 		SpecialChar = str,
 
