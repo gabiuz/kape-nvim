@@ -38,18 +38,18 @@ local M = function(p)
 		["@constructor"] = { fg = p.bright_cyan },
 
 		-- Keywords
-		["@keyword"] = { fg = p.red, bold = true },
-		["@keyword.function"] = { fg = p.red, bold = true },
-		["@keyword.operator"] = { fg = p.red },
-		["@keyword.return"] = { fg = p.red, italic = true },
+		["@keyword"] = { fg = p.violet, bold = true },
+		["@keyword.function"] = { fg = p.violet, bold = true },
+		["@keyword.operator"] = { fg = p.violet },
+		["@keyword.return"] = { fg = p.violet, italic = true },
 		["@keyword.import"] = { fg = p.violet },
 		["@keyword.export"] = { fg = p.violet },
 		["@keyword.type"] = { fg = p.violet, bold = true },
-		["@keyword.conditional"] = { fg = p.red },
-		["@keyword.conditional.ternary"] = { fg = p.red },
-		["@keyword.repeat"] = { fg = p.red },
-		["@keyword.exception"] = { fg = p.red },
-		["@keyword.modifier"] = { fg = p.red },
+		["@keyword.conditional"] = { fg = p.violet },
+		["@keyword.conditional.ternary"] = { fg = p.violet },
+		["@keyword.repeat"] = { fg = p.violet },
+		["@keyword.exception"] = { fg = p.violet },
+		["@keyword.modifier"] = { fg = p.violet },
 
 		-- Types
 		["@type"] = { fg = p.bright_cyan },
