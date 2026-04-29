@@ -44,7 +44,7 @@ local M = function(p)
 		["@keyword.return"] = { fg = p.red, italic = true },
 		["@keyword.import"] = { fg = p.violet },
 		["@keyword.export"] = { fg = p.violet },
-		["@keyword.type"] = { fg = p.red, bold = true },
+		["@keyword.type"] = { fg = p.violet, bold = true },
 		["@keyword.conditional"] = { fg = p.red },
 		["@keyword.conditional.ternary"] = { fg = p.red },
 		["@keyword.repeat"] = { fg = p.red },
