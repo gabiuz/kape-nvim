@@ -1,11 +1,15 @@
+-- lua/kape/highlights/treesitter.lua
+-- Layer 2: Treesitter highlight groups
+-- Requires Neovim 0.8+ with nvim-treesitter installed
+
 local M = function(p)
 	local highlights = {
 
 		-- Variables
-		["@variable"] = { fg = p.cyan },
-		["@variable.builtin"] = { fg = p.bright_cyan, italic = true },
-		["@variable.parameter"] = { fg = p.cyan },
-		["@variable.member"] = { fg = p.second_text },
+		["@variable"] = { fg = p.yellow },
+		["@variable.builtin"] = { fg = p.yellow, italic = true },
+		["@variable.parameter"] = { fg = p.yellow },
+		["@variable.member"] = { fg = p.yellow },
 
 		-- Constants
 		["@constant"] = { fg = p.yellow },
@@ -25,13 +29,13 @@ local M = function(p)
 		["@boolean"] = { fg = p.yellow, bold = true },
 
 		-- Functions
-		["@function"] = { fg = p.blue },
-		["@function.builtin"] = { fg = p.blue, italic = true },
-		["@function.call"] = { fg = p.blue },
+		["@function"] = { fg = p.green },
+		["@function.builtin"] = { fg = p.green, italic = true },
+		["@function.call"] = { fg = p.green },
 		["@function.macro"] = { fg = p.violet },
-		["@function.method"] = { fg = p.blue },
-		["@function.method.call"] = { fg = p.blue },
-		["@constructor"] = { fg = p.cyan },
+		["@function.method"] = { fg = p.green },
+		["@function.method.call"] = { fg = p.green },
+		["@constructor"] = { fg = p.bright_cyan },
 
 		-- Keywords
 		["@keyword"] = { fg = p.red, bold = true },
@@ -40,7 +44,7 @@ local M = function(p)
 		["@keyword.return"] = { fg = p.red, italic = true },
 		["@keyword.import"] = { fg = p.violet },
 		["@keyword.conditional"] = { fg = p.red },
-		["@keyword.conditional.ternary"] = { fg = p.cyan },
+		["@keyword.conditional.ternary"] = { fg = p.red },
 		["@keyword.repeat"] = { fg = p.red },
 		["@keyword.exception"] = { fg = p.red },
 		["@keyword.modifier"] = { fg = p.red },
@@ -50,12 +54,14 @@ local M = function(p)
 		["@type.builtin"] = { fg = p.bright_cyan, italic = true },
 		["@type.definition"] = { fg = p.bright_cyan },
 		["@type.qualifier"] = { fg = p.red },
+		["@attribute"] = { fg = p.orange },
+		["@property"] = { fg = p.yellow },
 
 		-- Operators & Punctuation
-		["@operator"] = { fg = p.white },
-		["@punctuation.bracket"] = { fg = p.white },
-		["@punctuation.delimiter"] = { fg = p.white },
-		["@punctuation.special"] = { fg = p.white },
+		["@operator"] = { fg = p.foreground },
+		["@punctuation.bracket"] = { fg = p.foreground },
+		["@punctuation.delimiter"] = { fg = p.foreground },
+		["@punctuation.special"] = { fg = p.foreground },
 
 		-- Comments
 		["@comment"] = { fg = p.third_text, italic = true },
@@ -70,13 +76,13 @@ local M = function(p)
 		["@markup.heading.2"] = { fg = p.green, bold = true },
 		["@markup.heading.3"] = { fg = p.blue, bold = true },
 		["@markup.heading.4"] = { fg = p.violet, bold = true },
-		["@markup.heading.5"] = { fg = p.cyan, bold = true },
+		["@markup.heading.5"] = { fg = p.bright_cyan, bold = true },
 		["@markup.heading.6"] = { fg = p.second_text, bold = true },
 		["@markup.raw"] = { fg = p.green },
 		["@markup.raw.block"] = { fg = p.green },
 		["@markup.link"] = { fg = p.blue, underline = true },
 		["@markup.link.label"] = { fg = p.blue },
-		["@markup.link.url"] = { fg = p.cyan, underline = true },
+		["@markup.link.url"] = { fg = p.bright_cyan, underline = true },
 		["@markup.italic"] = { italic = true },
 		["@markup.strong"] = { bold = true },
 		["@markup.strikethrough"] = { strikethrough = true },
@@ -87,8 +93,8 @@ local M = function(p)
 
 		-- Tags (HTML, JSX, etc.)
 		["@tag"] = { fg = p.red },
-		["@tag.attribute"] = { fg = p.yellow },
-		["@tag.delimiter"] = { fg = p.white },
+		["@tag.attribute"] = { fg = p.orange },
+		["@tag.delimiter"] = { fg = p.foreground },
 
 		-- Misc
 		["@none"] = {},
@@ -96,8 +102,8 @@ local M = function(p)
 		["@diff.plus"] = { fg = p.green },
 		["@diff.minus"] = { fg = p.red },
 		["@diff.delta"] = { fg = p.yellow },
-		["@module"] = { fg = p.foreground },
-		["@label"] = { fg = p.violet },
+		["@module"] = { fg = p.yellow },
+		["@label"] = { fg = p.orange },
 	}
 
 	for group, opts in pairs(highlights) do
