@@ -5,7 +5,7 @@ local M = function(p)
 		["@variable"] = { fg = p.cyan },
 		["@variable.builtin"] = { fg = p.bright_cyan, italic = true },
 		["@variable.parameter"] = { fg = p.cyan },
-		["@variable.member"] = { fg = p.second_text }, -- properties stay subtle
+		["@variable.member"] = { fg = p.second_text },
 
 		-- Constants
 		["@constant"] = { fg = p.yellow },
