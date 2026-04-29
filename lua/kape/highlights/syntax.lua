@@ -19,12 +19,12 @@ local M = function(p, opts)
 		-- Literals
 		String         = { fg = p.green },
 		Character      = { fg = p.green },
-		Number         = { fg = p.violet },
-		Float          = { fg = p.violet },
-		Boolean        = { fg = p.violet },
+		Number         = { fg = p.yellow },
+		Float          = { fg = p.yellow },
+		Boolean        = { fg = p.yellow },
 
 		-- Identifiers
-		Identifier     = { fg = p.blue },
+		Identifier     = { fg = p.yellow },
 		Function       = { fg = p.green, bold = true },
 
 		-- Statements & keywords
@@ -37,26 +37,26 @@ local M = function(p, opts)
 		Typedef        = { fg = p.red },
 
 		-- Operators
-		Operator       = { fg = p.orange },
+		Operator       = { fg = p.fg0 },
 
 		-- Types
-		Type           = { fg = p.yellow },
-		StorageClass   = { fg = p.orange },
-		Structure      = { fg = p.orange },
+		Type           = { fg = p.cyan },
+		StorageClass   = { fg = p.cyan },
+		Structure      = { fg = p.cyan },
 
 		-- Preprocessor
 		PreProc        = { fg = p.violet },
 		PreCondit      = { fg = p.violet },
 		Include        = { fg = p.violet },
 		Define         = { fg = p.violet },
-		Macro          = { fg = p.cyan },
+		Macro          = { fg = p.violet },
 
 		-- Special
-		Special        = { fg = p.yellow },
-		SpecialChar    = { fg = p.yellow },
-		Tag            = { fg = p.orange },
+		Special        = { fg = p.orange },
+		SpecialChar    = { fg = p.orange },
+		Tag            = { fg = p.red },
 		Title          = { fg = p.orange, bold = true },
-		Constant       = { fg = p.cyan },
+		Constant       = { fg = p.yellow },
 
 		-- Diff (added for legacy syntax files)
 		Added          = { link = "KapeGreen" },
