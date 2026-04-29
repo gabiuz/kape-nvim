@@ -2,10 +2,10 @@ local M = function(p)
 	local highlights = {
 
 		-- Variables
-		["@variable"] = { fg = p.foreground },
-		["@variable.builtin"] = { fg = p.yellow, italic = true },
-		["@variable.parameter"] = { fg = p.foreground },
-		["@variable.member"] = { fg = p.foreground },
+		["@variable"] = { fg = p.cyan },
+		["@variable.builtin"] = { fg = p.bright_cyan, italic = true },
+		["@variable.parameter"] = { fg = p.cyan },
+		["@variable.member"] = { fg = p.second_text }, -- properties stay subtle
 
 		-- Constants
 		["@constant"] = { fg = p.yellow },
