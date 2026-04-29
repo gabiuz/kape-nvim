@@ -43,6 +43,8 @@ local M = function(p)
 		["@keyword.operator"] = { fg = p.red },
 		["@keyword.return"] = { fg = p.red, italic = true },
 		["@keyword.import"] = { fg = p.violet },
+		["@keyword.export"] = { fg = p.violet },
+		["@keyword.type"] = { fg = p.red, bold = true },
 		["@keyword.conditional"] = { fg = p.red },
 		["@keyword.conditional.ternary"] = { fg = p.red },
 		["@keyword.repeat"] = { fg = p.red },
@@ -93,6 +95,7 @@ local M = function(p)
 
 		-- Tags (HTML, JSX, etc.)
 		["@tag"] = { fg = p.red },
+		["@tag.builtin"] = { fg = p.bright_cyan }, -- intrinsic elements: <div>, <h2>, etc.
 		["@tag.attribute"] = { fg = p.orange },
 		["@tag.delimiter"] = { fg = p.foreground },
 
@@ -104,6 +107,34 @@ local M = function(p)
 		["@diff.delta"] = { fg = p.yellow },
 		["@module"] = { fg = p.yellow },
 		["@label"] = { fg = p.orange },
+		-- LSP Semantic Tokens
+		-- Link @lsp.* groups back to Treesitter equivalents so LSP semantic
+		-- highlighting doesn't override palette colors with Neovim defaults.
+		["@lsp.type.variable"] = { link = "@variable" },
+		["@lsp.type.parameter"] = { link = "@variable.parameter" },
+		["@lsp.type.property"] = { link = "@variable.member" },
+		["@lsp.type.function"] = { link = "@function" },
+		["@lsp.type.method"] = { link = "@function.method" },
+		["@lsp.type.keyword"] = { link = "@keyword" },
+		["@lsp.type.string"] = { link = "@string" },
+		["@lsp.type.number"] = { link = "@number" },
+		["@lsp.type.boolean"] = { link = "@boolean" },
+		["@lsp.type.class"] = { link = "@type" },
+		["@lsp.type.interface"] = { link = "@type" },
+		["@lsp.type.enum"] = { link = "@type" },
+		["@lsp.type.enumMember"] = { link = "@constant" },
+		["@lsp.type.type"] = { link = "@type" },
+		["@lsp.type.typeParameter"] = { link = "@type" },
+		["@lsp.type.namespace"] = { link = "@module" },
+		["@lsp.type.decorator"] = { link = "@attribute" },
+		["@lsp.type.comment"] = { link = "@comment" },
+		["@lsp.type.operator"] = { link = "@operator" },
+		["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
+		["@lsp.type.builtinType"] = { link = "@type.builtin" },
+		-- LSP Modifiers
+		["@lsp.mod.readonly"] = { link = "@constant" },
+		["@lsp.mod.defaultLibrary"] = { italic = true },
+		["@lsp.mod.deprecated"] = { strikethrough = true },
 	}
 
 	for group, opts in pairs(highlights) do
