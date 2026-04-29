@@ -46,18 +46,16 @@ local M = function(p)
 		["@keyword.modifier"] = { fg = p.red },
 
 		-- Types
-		["@type"] = { fg = p.cyan },
-		["@type.builtin"] = { fg = p.cyan, italic = true },
-		["@type.definition"] = { fg = p.cyan },
+		["@type"] = { fg = p.bright_cyan },
+		["@type.builtin"] = { fg = p.bright_cyan, italic = true },
+		["@type.definition"] = { fg = p.bright_cyan },
 		["@type.qualifier"] = { fg = p.red },
-		["@attribute"] = { fg = p.violet },
-		["@property"] = { fg = p.foreground },
 
 		-- Operators & Punctuation
-		["@operator"] = { fg = p.cyan },
+		["@operator"] = { fg = p.white },
 		["@punctuation.bracket"] = { fg = p.white },
 		["@punctuation.delimiter"] = { fg = p.white },
-		["@punctuation.special"] = { fg = p.cyan },
+		["@punctuation.special"] = { fg = p.white },
 
 		-- Comments
 		["@comment"] = { fg = p.third_text, italic = true },
