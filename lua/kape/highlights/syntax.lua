@@ -1,67 +1,83 @@
 -- lua/kape/highlights/syntax.lua
--- Classic vim syntax groups + Todo/Error/Underlined.
+-- Classic Vim syntax highlight groups.
+-- These are the fallback when Treesitter is not active.
+-- Color roles:
+--   violet = keywords / tags
+--   orange = strings / functions / imports / jsx attrs
+--   yellow = variables / numbers / constants / properties
+--   cyan   = types
+--   grey0  = comments  (italic)
+--   fg0    = punctuation / operators
 
 local M = function(p, opts)
 	local bg     = opts.transparent_background and p.none or p.bg0
 	local italic = opts.italic_comments and true or false
 
+	-- Semantic shorthands — keeps the table below readable
+	local kw  = { fg = p.violet }            -- keywords / tags
+	local str = { fg = p.orange }            -- strings / functions / imports
+	local var = { fg = p.yellow }            -- variables / numbers / constants
+	local typ = { fg = p.cyan }              -- types
+	local com = { fg = p.grey0, italic = italic } -- comments
+	local pun = { fg = p.fg0 }              -- punctuation / operators
+
 	local highlights = {
 
-		-- Basics
-		Comment        = { fg = p.grey0, italic = italic },
-		SpecialComment = { fg = p.grey0, italic = italic },
-		Delimiter      = { fg = p.yellow },
-		Ignore         = { fg = p.grey0 },
-		Underlined     = { underline = true },
-		Error          = { fg = p.violet },
-		Todo           = { fg = bg, bg = p.blue, bold = true },
+		-- Comments
+		Comment        = com,
+		SpecialComment = com,
 
-		-- Literals
-		String         = { fg = p.orange },
-		Character      = { fg = p.yellow },
-		Number         = { fg = p.yellow },
-		Float          = { fg = p.yellow },
-		Boolean        = { fg = p.yellow },
+		-- Keywords
+		Statement   = kw,
+		Conditional = kw,
+		Repeat      = kw,
+		Keyword     = kw,
+		Exception   = kw,
+		Typedef     = kw,
+		Label       = str, -- "default:", "case:" labels — attr-adjacent
+		Tag         = kw,  -- HTML/JSX tag names
 
-		-- Identifiers
-		Identifier     = { fg = p.yellow },
-		Function       = { fg = p.orange, bold = true },
+		-- Strings & string-like
+		String      = str,
+		Character   = var, -- single char literal
+		SpecialChar = str,
 
-		-- Statements & keywords
-		Statement      = { fg = p.violet },
-		Conditional    = { fg = p.violet },
-		Repeat         = { fg = p.violet },
-		Label          = { fg = p.orange },
-		Keyword        = { fg = p.violet },
-		Exception      = { fg = p.violet },
-		Typedef        = { fg = p.violet },
+		-- Functions & imports (orange = "callable / structural")
+		Function = { fg = p.orange, bold = true },
+		Include  = str, -- import / require
+		PreProc  = str,
+		PreCondit = str,
+		Define   = str,
+		Macro    = str,
 
-		-- Operators
-		Operator       = { fg = p.fg0 },
+		-- Variables / numbers / constants
+		Identifier = var,
+		Number     = var,
+		Float      = var,
+		Boolean    = var,
+		Constant   = var,
 
 		-- Types
-		Type           = { fg = p.cyan },
-		StorageClass   = { fg = p.cyan },
-		Structure      = { fg = p.cyan },
+		Type         = typ,
+		StorageClass = typ,
+		Structure    = typ,
 
-		-- Preprocessor
-		PreProc        = { fg = p.orange },
-		PreCondit      = { fg = p.orange },
-		Include        = { fg = p.orange },
-		Define         = { fg = p.orange },
-		Macro          = { fg = p.orange },
+		-- Operators & punctuation
+		Operator  = pun,
+		Delimiter = pun,
 
 		-- Special
-		Special        = { fg = p.orange },
-		SpecialChar    = { fg = p.orange },
-		Tag            = { fg = p.violet },
-		Title          = { fg = p.orange, bold = true },
-		Constant       = { fg = p.yellow },
+		Special    = str,
+		Title      = { fg = p.orange, bold = true },
+		Underlined = { underline = true },
+		Ignore     = { fg = p.grey0 },
+		Error      = { fg = p.violet },
+		Todo       = { fg = bg, bg = p.blue, bold = true },
 
-		-- Diff (added for legacy syntax files)
-		Added          = { link = "KapeGreen" },
-		Removed        = { link = "Kapeviolet" },
-		Changed        = { link = "KapeBlue" },
+		-- Diff
+		Added   = { link = "KapeGreen" },
+		Removed = { link = "KapeViolet" },
+		Changed = { link = "KapeBlue" },
 	}
 
 	for group, hl_opts in pairs(highlights) do
