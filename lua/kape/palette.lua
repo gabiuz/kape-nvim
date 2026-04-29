@@ -9,6 +9,7 @@ M.palette = {
 
 	-- Accents
 	red = "#b53535",
+	orange = "#c87941",
 	green = "#b4c76e",
 	yellow = "#e7bb5c",
 	blue = "#7b8fd4",
@@ -19,6 +20,7 @@ M.palette = {
 	-- Brights
 	bright_black = "#2e2a2a",
 	bright_red = "#c94040",
+	bright_orange = "#d4975a",
 	bright_green = "#cad98a",
 	bright_yellow = "#f0cc7a",
 	bright_blue = "#9aaae0",
