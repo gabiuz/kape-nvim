@@ -1,28 +1,29 @@
+-- lua/kape/init.lua
+-- Loads highlight modules in order: semantic → editor → syntax →
+-- treesitter → lsp → plugins.
+
 local M = {}
 
-local function load_integration(name, p, opts)
-	local ok, integration = pcall(require, "kape.highlights.integrations." .. name)
-	if ok then
-		integration(p, opts)
-	end
-end
+M.options = {}
 
-M.options = {
-	transparent = false,
-}
-
+---@param opts table|nil Options to override defaults (see lua/kape/config.lua)
 function M.setup(opts)
-	M.options = vim.tbl_deep_extend("force", M.options, opts or {})
+	local config  = require("kape.config")
+	M.options     = config.get(opts)
+
 	local p = require("kape.palette").palette
 
 	vim.o.termguicolors = true
 
-	require("kape.highlights.base")(p, M.options)
+	require("kape.highlights.semantic")(p, M.options)
+	require("kape.highlights.editor")(p, M.options)
+	require("kape.highlights.syntax")(p, M.options)
+	require("kape.highlights.treesitter")(p, M.options)
+	require("kape.highlights.lsp")(p, M.options)
 
-	load_integration("telescope", p, M.options)
-	load_integration("nvimtree", p, M.options)
-	load_integration("bufferline", p, M.options)
-	load_integration("lualine", p)
+	require("kape.highlights.telescope")(p, M.options)
+	require("kape.highlights.nvimtree")(p, M.options)
+	require("kape.highlights.bufferline")(p, M.options)
 end
 
 return M
