@@ -82,7 +82,7 @@ return {
       MsgArea      = { link = "ModeMsg" },
       MsgSeparator = { link = "ModeMsg" },
       MoreMsg      = { fg = scheme.base.yellow },
-      NonText      = { fg = scheme.editor.background },
+      NonText      = { fg = scheme.base.dimmed4 },
       Whitespace   = { fg = scheme.base.dimmed4 },
       SpecialKey   = { fg = scheme.base.magenta },
       Question     = { fg = scheme.base.yellow },
