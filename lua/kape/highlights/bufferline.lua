@@ -1,69 +1,109 @@
 -- lua/kape/highlights/bufferline.lua
--- Uses semantic group links where possible.
 
 local M = function(p, opts)
 	local bg = opts.transparent_background and p.none or p.bg0
 
+	-- Three-state palette
+	-- active   = selected / focused buffer     → bg0 (editor surface)
+	-- visible  = open but unfocused window     → bg1
+	-- fill     = inactive / background tabs    → bg1
+	local active_bg   = bg
+	local active_fg   = p.fg0
+	local visible_bg  = p.bg1
+	local visible_fg  = p.fg1
+	local fill_bg     = p.bg1
+	local fill_fg     = p.grey0
+	local tabs_bg     = bg     -- the bar area between tabs
+
 	local highlights = {
+		-- Fill / offset
+		BufferLineFill            = { bg = tabs_bg },
+		BufferLineOffsetSeparator = { link = "NeoTreeWinSeparator" },
 
-		-- Base
-		BufferLineFill              = { bg = bg },
-		BufferLineBackground        = { fg = p.grey0, bg = p.bg1 },
-		BufferLineTab               = { fg = p.grey0, bg = p.bg1 },
-		BufferLineTabClose          = { link = "KapeRed" },
-		BufferLineTabSelected       = { fg = p.fg0,   bg = bg },
-		BufferLineSeparator         = { fg = bg,      bg = p.bg1 },
-		BufferLineSeparatorVisible  = { fg = bg,      bg = p.bg1 },
-		BufferLineSeparatorSelected = { fg = bg,      bg = bg },
-		BufferLineIndicatorSelected = { fg = p.yellow, bg = bg },
-		BufferLineOffsetSeparator   = { fg = p.bg3,   bg = p.bg1 },
+		-- Buffer states
+		BufferLineBufferSelected  = { bg = active_bg,  fg = active_fg,  bold = true },
+		BufferLineBackground      = { bg = fill_bg,    fg = fill_fg },
+		BufferLineBufferVisible   = { bg = visible_bg, fg = visible_fg },
 
-		-- Visible (open but not focused)
-		BufferLineBufferVisible     = { fg = p.fg1,   bg = p.bg1 },
-		BufferLineCloseButtonVisible = { fg = p.grey0, bg = p.bg1 },
-		BufferLineNumbersVisible    = { fg = p.grey0, bg = p.bg1 },
-		BufferLineModifiedVisible   = { link = "KapeYellow" },
-		BufferLineDuplicateVisible  = { fg = p.grey0, bg = p.bg1, italic = true },
+		-- Duplicate
+		BufferLineDuplicateSelected = { bg = active_bg,  fg = p.grey0, italic = true },
+		BufferLineDuplicate         = { bg = fill_bg,    fg = p.bg3,   italic = true },
+		BufferLineDuplicateVisible  = { bg = visible_bg, fg = p.grey0, italic = true },
 
-		-- Selected (focused)
-		BufferLineBufferSelected    = { fg = p.fg0,   bg = bg, bold = true },
-		BufferLineCloseButtonSelected = { fg = p.red, bg = bg },
-		BufferLineNumbersSelected   = { fg = p.fg0,   bg = bg, bold = true },
-		BufferLineModifiedSelected  = { link = "KapeYellow" },
-		BufferLineDuplicateSelected = { fg = p.grey0, bg = bg,    italic = true },
+		-- Close button
+		BufferLineCloseButtonSelected = { bg = active_bg,  fg = active_fg },
+		BufferLineCloseButton         = { bg = fill_bg,    fg = fill_fg },
+		BufferLineCloseButtonVisible  = { bg = visible_bg, fg = visible_fg },
 
-		-- Diagnostics — unselected
-		BufferLineError                        = { link = "KapeRed" },
-		BufferLineErrorVisible                 = { link = "KapeRed" },
-		BufferLineErrorDiagnostic              = { link = "KapeRed" },
-		BufferLineErrorDiagnosticVisible       = { link = "KapeRed" },
-		BufferLineWarning                      = { link = "KapeYellow" },
-		BufferLineWarningVisible               = { link = "KapeYellow" },
-		BufferLineWarningDiagnostic            = { link = "KapeYellow" },
-		BufferLineWarningDiagnosticVisible     = { link = "KapeYellow" },
-		BufferLineInfo                         = { link = "KapeBlue" },
-		BufferLineInfoVisible                  = { link = "KapeBlue" },
-		BufferLineInfoDiagnostic               = { link = "KapeBlue" },
-		BufferLineInfoDiagnosticVisible        = { link = "KapeBlue" },
-		BufferLineHint                         = { link = "KapeCyan" },
-		BufferLineHintVisible                  = { link = "KapeCyan" },
-		BufferLineHintDiagnostic               = { link = "KapeCyan" },
-		BufferLineHintDiagnosticVisible        = { link = "KapeCyan" },
+		-- Separator
+		BufferLineSeparatorSelected = { bg = active_bg,  fg = tabs_bg },
+		BufferLineSeparator         = { bg = fill_bg,    fg = tabs_bg },
+		BufferLineSeparatorVisible  = { bg = visible_bg, fg = tabs_bg },
 
-		-- Diagnostics — selected
-		BufferLineErrorSelected                = { fg = p.red,    bg = bg, bold = true },
-		BufferLineErrorDiagnosticSelected      = { fg = p.red,    bg = bg },
-		BufferLineWarningSelected              = { fg = p.yellow, bg = bg, bold = true },
-		BufferLineWarningDiagnosticSelected    = { fg = p.yellow, bg = bg },
-		BufferLineInfoSelected                 = { fg = p.blue,   bg = bg, bold = true },
-		BufferLineInfoDiagnosticSelected       = { fg = p.blue,   bg = bg },
-		BufferLineHintSelected                 = { fg = p.cyan,   bg = bg, bold = true },
-		BufferLineHintDiagnosticSelected       = { fg = p.cyan,   bg = bg },
+		-- Numbers
+		BufferLineNumbersSelected = { bg = active_bg,  fg = active_fg,  bold = true },
+		BufferLineNumbers         = { bg = fill_bg,    fg = fill_fg },
+		BufferLineNumbersVisible  = { bg = visible_bg, fg = visible_fg },
+
+		-- Modified indicator
+		BufferLineModifiedSelected = { bg = active_bg,  fg = p.yellow },
+		BufferLineModified         = { bg = fill_bg,    fg = p.yellow },
+		BufferLineModifiedVisible  = { bg = visible_bg, fg = p.yellow },
+
+		-- Warning
+		BufferLineWarningSelected = { bg = active_bg,  fg = p.yellow, bold = true },
+		BufferLineWarning         = { bg = fill_bg,    fg = p.yellow },
+		BufferLineWarningVisible  = { bg = visible_bg, fg = p.yellow },
+
+		-- Warning diagnostic (count badge)
+		BufferLineWarningDiagnosticSelected = { bg = active_bg,  fg = p.yellow },
+		BufferLineWarningDiagnostic         = { bg = fill_bg,    fg = p.grey0 },
+		BufferLineWarningDiagnosticVisible  = { bg = visible_bg, fg = p.yellow },
+
+		-- Error
+		BufferLineErrorSelected = { bg = active_bg,  fg = p.red, bold = true },
+		BufferLineError         = { bg = fill_bg,    fg = p.red },
+		BufferLineErrorVisible  = { bg = visible_bg, fg = p.red },
+
+		-- Error diagnostic (count badge)
+		BufferLineErrorDiagnosticSelected = { bg = active_bg,  fg = p.red, bold = true },
+		BufferLineErrorDiagnostic         = { bg = fill_bg,    fg = p.grey0 },
+		BufferLineErrorDiagnosticVisible  = { bg = visible_bg, fg = p.red },
+
+		-- Info
+		BufferLineInfoSelected = { bg = active_bg,  fg = p.blue, bold = true },
+		BufferLineInfo         = { bg = fill_bg,    fg = p.blue },
+		BufferLineInfoVisible  = { bg = visible_bg, fg = p.blue },
+
+		-- Info diagnostic (count badge)
+		BufferLineInfoDiagnosticSelected = { bg = active_bg,  fg = p.blue, bold = true },
+		BufferLineInfoDiagnostic         = { bg = fill_bg,    fg = p.grey0 },
+		BufferLineInfoDiagnosticVisible  = { bg = visible_bg, fg = p.blue },
+
+		-- Hint (link to info)
+		BufferLineHintSelected            = { link = "BufferLineInfoSelected" },
+		BufferLineHint                    = { link = "BufferLineInfo" },
+		BufferLineHintVisible             = { link = "BufferLineInfoVisible" },
+		BufferLineHintDiagnosticSelected  = { link = "BufferLineInfoDiagnosticSelected" },
+		BufferLineHintDiagnostic          = { link = "BufferLineInfoDiagnostic" },
+		BufferLineHintDiagnosticVisible   = { link = "BufferLineInfoDiagnosticVisible" },
 
 		-- Pick
-		BufferLinePick         = { fg = p.red, bg = bg,      bold = true },
-		BufferLinePickVisible  = { fg = p.red, bg = p.bg1,   bold = true },
-		BufferLinePickSelected = { fg = p.red, bg = bg,      bold = true },
+		BufferLinePickSelected = { bg = active_bg,  fg = p.red, bold = true },
+		BufferLinePick         = { bg = fill_bg,    fg = p.red, bold = true },
+		BufferLinePickVisible  = { bg = visible_bg, fg = p.red, bold = true },
+
+		-- Tab
+		BufferLineTabSelected       = { bg = active_bg,  fg = active_fg,  bold = true },
+		BufferLineTab               = { bg = fill_bg,    fg = fill_fg },
+		BufferLineTabClose          = { bg = tabs_bg,    fg = tabs_bg },
+		BufferLineTabSeparatorSelected = { bg = active_bg, fg = active_bg },
+		BufferLineTabSeparator         = { bg = fill_bg,   fg = fill_bg },
+
+		-- Indicator
+		BufferLineIndicatorSelected = { bg = active_bg,  fg = p.yellow },
+		BufferLineIndicator         = { bg = fill_bg,    fg = fill_bg },
+		BufferLineIndicatorVisible  = { bg = visible_bg, fg = visible_bg },
 	}
 
 	for group, hl_opts in pairs(highlights) do
