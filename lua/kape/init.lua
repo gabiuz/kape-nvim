@@ -23,6 +23,7 @@ function M.setup(opts)
 
 	require("kape.highlights.telescope")(p, M.options)
 	require("kape.highlights.nvimtree")(p, M.options)
+	require("kape.highlights.neotree")(p, M.options)
 	require("kape.highlights.bufferline")(p, M.options)
 end
 

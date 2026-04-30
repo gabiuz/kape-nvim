@@ -64,6 +64,7 @@ vim.cmd.colorscheme("kape")
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | ✅ |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | ✅ |
 | [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) | ✅ |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | ✅ |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | ✅ |
 | [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | ✅ |
 
