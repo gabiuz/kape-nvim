@@ -43,11 +43,12 @@ return {
 
       -- Result row content
       TelescopeResultsFileName       = { fg = c.base.white },
-      TelescopeResultsFilePath       = { fg = c.base.dimmed2 },
+      TelescopeResultsFilePath       = { fg = c.base.dimmed3 },
       TelescopePathSeparator         = { fg = c.base.dimmed3 },
       TelescopeResultsLineNr         = { fg = c.base.dimmed3 },
-      TelescopeResultsComment        = { fg = c.base.dimmed3 },
-      TelescopeResultsSpecialComment = { fg = c.base.dimmed3 },
+      -- filename_first path display uses TelescopeResultsComment for the directory breadcrumb
+      TelescopeResultsComment        = { fg = c.base.dimmed2 },
+      TelescopeResultsSpecialComment = { fg = c.base.dimmed2 },
       TelescopeResultsClass          = { fg = c.base.green },
       TelescopeResultsConstant       = { fg = c.base.yellow },
       TelescopeResultsField          = { fg = c.base.yellow },
@@ -58,6 +59,11 @@ return {
       TelescopeResultsVariable       = { fg = c.base.white },
       TelescopeResultsIdentifier     = { fg = c.base.white },
       TelescopeResultsNumber         = { fg = c.base.yellow },
+
+      -- Breadcrumb / path display (used depending on path_display config)
+      TelescopeResultsDiffUntracked  = { fg = c.base.dimmed3 },
+      TelescopePreviewDirectory      = { fg = c.base.dimmed3 },
+      TelescopePreviewFilePath       = { fg = c.base.dimmed3 },
     }
   end,
 }
