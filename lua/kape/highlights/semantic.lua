@@ -2,92 +2,113 @@
 -- Defines named intermediate groups (KapeRed, KapeErrorText, etc.) that
 -- plugin highlight files link to, keeping them decoupled from raw colors.
 local M = function(p, opts)
+    opts = opts or {}
+
+    local colors = {
+        fg = p.text or p.fg0,
+        grey = p.dimmed3 or p.grey0,
+        red = p.accent1 or p.red,
+        orange = p.accent2 or p.orange,
+        yellow = p.accent3 or p.yellow,
+        green = p.accent4 or p.green,
+        cyan = p.accent5 or p.cyan,
+        blue = p.blue,
+        violet = p.accent6 or p.violet,
+        sign_bg = p.dimmed5 or p.bg1,
+        current_word_bg = p.dimmed5 or p.bg2,
+        inlay_bg = p.dark1 or p.bg1,
+        bg_visual_red = p.bg_visual_red,
+        bg_visual_yellow = p.bg_visual_yellow,
+        bg_visual_green = p.bg_visual_green,
+        bg_visual_blue = p.bg_visual_blue
+    }
+
     local hl = vim.api.nvim_set_hl
 
     -- Color aliases 
     hl(0, "KapeFg", {
-        fg = p.fg0
+        fg = colors.fg
     })
     hl(0, "KapeGrey", {
-        fg = p.grey0
+        fg = colors.grey
     })
     hl(0, "KapeRed", {
-        fg = p.red
+        fg = colors.red
     })
     hl(0, "KapeOrange", {
-        fg = p.orange
+        fg = colors.orange
     })
     hl(0, "KapeYellow", {
-        fg = p.yellow
+        fg = colors.yellow
     })
     hl(0, "KapeGreen", {
-        fg = p.green
+        fg = colors.green
     })
     hl(0, "KapeCyan", {
-        fg = p.cyan
+        fg = colors.cyan
     })
     hl(0, "KapeBlue", {
-        fg = p.blue
+        fg = colors.blue
     })
     hl(0, "KapeViolet", {
-        fg = p.violet
+        fg = colors.violet
     })
 
     -- Italic variants (respects italic_comments option)
     local italic = opts.italic_comments and true or false
     hl(0, "KapeRedItalic", {
-        fg = p.red,
+        fg = colors.red,
         italic = italic
     })
     hl(0, "KapeYellowItalic", {
-        fg = p.yellow,
+        fg = colors.yellow,
         italic = italic
     })
     hl(0, "KapeGreenItalic", {
-        fg = p.green,
+        fg = colors.green,
         italic = italic
     })
     hl(0, "KapeCyanItalic", {
-        fg = p.cyan,
+        fg = colors.cyan,
         italic = italic
     })
     hl(0, "KapeBlueItalic", {
-        fg = p.blue,
+        fg = colors.blue,
         italic = italic
     })
     hl(0, "KapeVioletItalic", {
-        fg = p.violet,
+        fg = colors.violet,
         italic = italic
     })
 
     -- Sign column colors 
     hl(0, "KapeRedSign", {
-        fg = p.red,
-        bg = p.bg1
+        fg = colors.red,
+        bg = colors.sign_bg
     })
     hl(0, "KapeOrangeSign", {
-        fg = p.orange,
-        bg = p.bg1
+        fg = colors.orange,
+        bg = colors.sign_bg
     })
     hl(0, "KapeYellowSign", {
-        fg = p.yellow,
-        bg = p.bg1
+        fg = colors.yellow,
+        bg = colors.sign_bg
     })
     hl(0, "KapeGreenSign", {
-        fg = p.green,
-        bg = p.bg1
+        fg = colors.green,
+        bg = colors.sign_bg
     })
     hl(0, "KapeCyanSign", {
-        fg = p.cyan,
-        bg = p.bg1
+        fg = colors.cyan,
+        bg = colors.sign_bg
     })
     hl(0, "KapeBlueSign", {
-        fg = p.blue,
-        bg = p.bg1
+        fg = colors.blue,
+        bg = colors.sign_bg
     })
     hl(0, "KapeVioletSign", {
-        fg = p.violet,
-        bg = p.bg1
+        fg = colors.violet,
+        bg = colors.sign_bg
     })
 
     -- Diagnostic virtual text 
@@ -108,64 +129,64 @@ local M = function(p, opts)
         })
     else -- "colored" (default)
         hl(0, "KapeVirtualTextError", {
-            fg = p.red,
-            bg = p.bg_visual_red
+            fg = colors.red,
+            bg = colors.bg_visual_red
         })
         hl(0, "KapeVirtualTextWarning", {
-            fg = p.yellow,
-            bg = p.bg_visual_yellow
+            fg = colors.yellow,
+            bg = colors.bg_visual_yellow
         })
         hl(0, "KapeVirtualTextInfo", {
-            fg = p.blue,
-            bg = p.bg_visual_blue
+            fg = colors.blue,
+            bg = colors.bg_visual_blue
         })
         hl(0, "KapeVirtualTextHint", {
-            fg = p.cyan,
-            bg = p.bg_visual_green
+            fg = colors.cyan,
+            bg = colors.bg_visual_green
         })
     end
 
     -- Inline diagnostic text 
     hl(0, "KapeErrorText", {
         undercurl = true,
-        sp = p.red
+        sp = colors.red
     })
     hl(0, "KapeWarningText", {
         undercurl = true,
-        sp = p.yellow
+        sp = colors.yellow
     })
     hl(0, "KapeInfoText", {
         undercurl = true,
-        sp = p.blue
+        sp = colors.blue
     })
     hl(0, "KapeHintText", {
         undercurl = true,
-        sp = p.cyan
+        sp = colors.cyan
     })
 
     -- Float diagnostic (no background, just color)
     hl(0, "KapeErrorFloat", {
-        fg = p.red
+        fg = colors.red
     })
     hl(0, "KapeWarningFloat", {
-        fg = p.yellow
+        fg = colors.yellow
     })
     hl(0, "KapeInfoFloat", {
-        fg = p.blue
+        fg = colors.blue
     })
     hl(0, "KapeHintFloat", {
-        fg = p.cyan
+        fg = colors.cyan
     })
 
     -- Current word 
     hl(0, "KapeCurrentWord", {
-        bg = p.bg2
+        bg = colors.current_word_bg
     })
 
     -- Inlay hints
     hl(0, "KapeInlayHints", {
-        fg = p.grey0,
-        bg = p.bg1
+        fg = colors.grey,
+        bg = colors.inlay_bg
     })
 end
 

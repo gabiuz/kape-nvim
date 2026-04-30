@@ -1,42 +1,42 @@
 -- lua/lualine/themes/kape.lua
 -- Configure lualine with: options = { theme = "kape" }
 
-local p = require("kape.palette").palette
+local p = require("kape.palette").load()
 
 return {
 	normal = {
-		a = { bg = p.yellow,  fg = p.bg0,   gui = "bold" },
-		b = { bg = p.bg2,     fg = p.fg0 },
-		c = { bg = p.bg1,     fg = p.fg1 },
+		a = { bg = p.accent3, fg = p.background, gui = "bold" },
+		b = { bg = p.dimmed5, fg = p.text },
+		c = { bg = p.dark1,   fg = p.dimmed2 },
 	},
 	insert = {
-		a = { bg = p.green,   fg = p.bg0,   gui = "bold" },
-		b = { bg = p.bg2,     fg = p.fg0 },
-		c = { bg = p.bg1,     fg = p.fg1 },
+		a = { bg = p.accent4, fg = p.background, gui = "bold" },
+		b = { bg = p.dimmed5, fg = p.text },
+		c = { bg = p.dark1,   fg = p.dimmed2 },
 	},
 	visual = {
-		a = { bg = p.violet,  fg = p.bg0,   gui = "bold" },
-		b = { bg = p.bg2,     fg = p.fg0 },
-		c = { bg = p.bg1,     fg = p.fg1 },
+		a = { bg = p.accent6, fg = p.background, gui = "bold" },
+		b = { bg = p.dimmed5, fg = p.text },
+		c = { bg = p.dark1,   fg = p.dimmed2 },
 	},
 	replace = {
-		a = { bg = p.red,     fg = p.bg0,   gui = "bold" },
-		b = { bg = p.bg2,     fg = p.fg0 },
-		c = { bg = p.bg1,     fg = p.fg1 },
+		a = { bg = p.accent1, fg = p.background, gui = "bold" },
+		b = { bg = p.dimmed5, fg = p.text },
+		c = { bg = p.dark1,   fg = p.dimmed2 },
 	},
 	command = {
-		a = { bg = p.cyan,    fg = p.bg0,   gui = "bold" },
-		b = { bg = p.bg2,     fg = p.fg0 },
-		c = { bg = p.bg1,     fg = p.fg1 },
+		a = { bg = p.accent5, fg = p.background, gui = "bold" },
+		b = { bg = p.dimmed5, fg = p.text },
+		c = { bg = p.dark1,   fg = p.dimmed2 },
 	},
 	terminal = {
-		a = { bg = p.violet,  fg = p.bg0,   gui = "bold" },
-		b = { bg = p.bg2,     fg = p.fg0 },
-		c = { bg = p.bg1,     fg = p.fg1 },
+		a = { bg = p.accent6, fg = p.background, gui = "bold" },
+		b = { bg = p.dimmed5, fg = p.text },
+		c = { bg = p.dark1,   fg = p.dimmed2 },
 	},
 	inactive = {
-		a = { bg = p.bg1,     fg = p.grey0 },
-		b = { bg = p.bg1,     fg = p.grey0 },
-		c = { bg = p.bg1,     fg = p.grey0 },
+		a = { bg = p.dark1,   fg = p.dimmed3 },
+		b = { bg = p.dark1,   fg = p.dimmed3 },
+		c = { bg = p.dark1,   fg = p.dimmed3 },
 	},
 }
