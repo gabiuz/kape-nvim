@@ -22,14 +22,14 @@
 ---@field bright_orange string
 ---@field bright_yellow string
 ---@field bright_green  string
----@field bright_cyan   string
+---@field bright_aqua   string
 ---@field bright_blue   string
----@field bright_violet string
+---@field bright_purple string
 ---@field bg_visual_red    string
 ---@field bg_visual_yellow string
 ---@field bg_visual_green  string
 ---@field bg_visual_blue   string
----@field bg_visual_violet string
+---@field bg_visual_purple string
 ---@field bg_diff_red   string
 ---@field bg_diff_green string
 ---@field bg_diff_blue  string
@@ -47,8 +47,8 @@ return {
   accent2 = "#c87941",
   accent3 = "#e7bb5c",
   accent4 = "#b4c76e",
-  accent5 = "#72c4b8",
-  accent6 = "#b072e6",
+  accent5 = "#689d8a",
+  accent6 = "#b06880",
 
   -- Grays
   dimmed1 = "#d4be98",
@@ -57,7 +57,7 @@ return {
   dimmed4 = "#928374",
   dimmed5 = "#2e2a2a",
 
-  -- Blue (separate from cyan, used for LSP info)
+  -- Blue (separate from aqua, used for LSP info)
   blue = "#7b8fd4",
 
   -- Brights
@@ -65,15 +65,20 @@ return {
   bright_orange = "#d4975a",
   bright_yellow = "#f0cc7a",
   bright_green  = "#cad98a",
-  bright_cyan   = "#90d4ca",
+  bright_aqua   = "#89b8a8",
   bright_blue   = "#9aaae0",
-  bright_violet = "#c48ef0",
+  bright_purple = "#c8889a",
 
   -- Visual / diff tinted backgrounds
   bg_visual_red    = "#3c1f1e",
   bg_visual_yellow = "#3a2e1a",
   bg_visual_green  = "#2a3120",
   bg_visual_blue   = "#1e2b30",
+  bg_visual_purple = "#2e1e30",
+
+  -- ANSI compatibility aliases
+  bright_cyan   = "#89b8a8",
+  bright_violet = "#c8889a",
   bg_visual_violet = "#2e1e30",
 
   bg_diff_red   = "#3c1f1e",

@@ -30,7 +30,7 @@ return {
       NvimTreeFileName          = { link = "KapeFg" },
       NvimTreeFileIcon          = { link = "KapeFg" },
       NvimTreeSpecialFile       = { link = "KapeFg" },
-      NvimTreeSymlink           = { link = "KapeCyan" },
+      NvimTreeSymlink           = { link = "KapeAqua" },
       NvimTreeSymlinkIcon       = { link = "KapeFg" },
       NvimTreeSymlinkFolderName = { link = "KapeGreen" },
       NvimTreeImageFile         = { link = "KapeFg" },
@@ -41,8 +41,8 @@ return {
       NvimTreeGitDirty   = { link = "KapeYellow" },
       NvimTreeGitStaged  = { link = "KapeBlue" },
       NvimTreeGitMerge   = { link = "KapeOrange" },
-      NvimTreeGitRenamed = { link = "KapeViolet" },
-      NvimTreeGitNew     = { link = "KapeCyan" },
+      NvimTreeGitRenamed = { link = "KapePurple" },
+      NvimTreeGitNew     = { link = "KapeAqua" },
       NvimTreeGitDeleted = { link = "KapeRed" },
       NvimTreeGitIgnored = { link = "KapeGrey" },
 
@@ -50,11 +50,11 @@ return {
       NvimTreeLspDiagnosticsError       = { link = "KapeRedSign" },
       NvimTreeLspDiagnosticsWarning     = { link = "KapeYellowSign" },
       NvimTreeLspDiagnosticsInformation = { link = "KapeBlueSign" },
-      NvimTreeLspDiagnosticsHint        = { link = "KapeCyanSign" },
+      NvimTreeLspDiagnosticsHint        = { link = "KapeAquaSign" },
 
       -- Misc
       NvimTreePopup            = { fg = c.base.white,   bg = c.editorSuggestWidget.background },
-      NvimTreeBookmark         = { link = "KapeViolet" },
+      NvimTreeBookmark         = { link = "KapePurple" },
       NvimTreeLiveFilterPrefix = { link = "KapeRed" },
       NvimTreeLiveFilterValue  = { fg = c.base.white, bold = true },
     }

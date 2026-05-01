@@ -19,7 +19,7 @@ return {
       FzfLuaCursor       = { link = "IncSearch" },
 
       -- Prompt / header
-      FzfLuaPrompt       = { bg = c.sideBar.background, fg = c.base.cyan, bold = true },
+      FzfLuaPrompt       = { bg = c.sideBar.background, fg = c.base.aqua, bold = true },
       FzfLuaSearch       = { bg = c.sideBar.background, fg = c.base.white },
       FzfLuaHeaderBind   = { fg = c.base.yellow },
       FzfLuaHeaderText   = { fg = c.base.dimmed2 },
@@ -35,7 +35,7 @@ return {
       FzfLuaFzfPointer    = { fg = c.base.yellow },
       FzfLuaFzfSeparator  = { fg = c.base.dimmed3, bg = panel_bg },
       FzfLuaFzfMatch      = { fg = c.base.blue, bold = true },
-      FzfLuaFzfPrompt     = { fg = c.base.cyan },
+      FzfLuaFzfPrompt     = { fg = c.base.aqua },
       FzfLuaFzfGutter     = { bg = panel_bg },
 
       -- Path display

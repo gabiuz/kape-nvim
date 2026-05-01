@@ -84,9 +84,9 @@ return {
       MoreMsg      = { fg = scheme.base.yellow },
       NonText      = { fg = scheme.base.dimmed4 },
       Whitespace   = { fg = scheme.base.dimmed4 },
-      SpecialKey   = { fg = scheme.base.magenta },
+      SpecialKey   = { fg = scheme.base.purple },
       Question     = { fg = scheme.base.yellow },
-      QuickFixLine = { fg = scheme.base.magenta, bold = true },
+      QuickFixLine = { fg = scheme.base.purple, bold = true },
       MatchParen   = { fg = scheme.base.yellow, bold = true, underline = true },
       Terminal     = { fg = scheme.editor.foreground, bg = scheme.editor.background },
 
@@ -102,8 +102,8 @@ return {
       -- Spell
       SpellBad   = { fg = scheme.base.red,     sp = scheme.base.red,     undercurl = true },
       SpellCap   = { fg = scheme.base.blue,    sp = scheme.base.blue,    undercurl = true },
-      SpellLocal = { fg = scheme.base.cyan,    sp = scheme.base.cyan,    undercurl = true },
-      SpellRare  = { fg = scheme.base.magenta, sp = scheme.base.magenta, undercurl = true },
+      SpellLocal = { fg = scheme.base.aqua,    sp = scheme.base.aqua,    undercurl = true },
+      SpellRare  = { fg = scheme.base.purple, sp = scheme.base.purple, undercurl = true },
 
       -- Diff
       DiffAdd    = { bg = scheme.diffEditor.insertedLineBackground, fg = scheme.diffEditorOverview.insertedForeground },
@@ -115,7 +115,7 @@ return {
       diffChanged = { fg = scheme.base.yellow },
       diffFile    = { fg = scheme.base.yellow },
       diffNewFile = { fg = scheme.base.yellow },
-      diffLine    = { fg = scheme.base.cyan },
+      diffLine    = { fg = scheme.base.aqua },
       Added   = { fg = scheme.base.green },
       Removed = { fg = scheme.base.red },
       Changed = { fg = scheme.base.blue },

@@ -27,12 +27,12 @@ return {
 
       -- Statements
       Statement   = { fg = scheme.base.red },
-      Conditional = { fg = scheme.base.magenta },
-      Repeat      = { fg = scheme.base.magenta },
-      Label       = { fg = scheme.base.magenta },
+      Conditional = { fg = scheme.base.purple },
+      Repeat      = { fg = scheme.base.purple },
+      Label       = { fg = scheme.base.purple },
       Operator    = { fg = scheme.base.white },
       Keyword     = { fg = scheme.base.red,     italic = styles.keyword   and styles.keyword.italic },
-      Exception   = { fg = scheme.base.magenta },
+      Exception   = { fg = scheme.base.purple },
 
       -- Preprocessor
       PreProc   = { fg = scheme.base.orange },
@@ -42,10 +42,10 @@ return {
       PreCondit = { fg = scheme.base.orange },
 
       -- Types
-      Type         = { fg = scheme.base.cyan,  italic = styles.type and styles.type.italic },
-      StorageClass = { fg = scheme.base.cyan,  italic = styles.type and styles.type.italic },
-      Structure    = { fg = scheme.base.cyan,  italic = styles.type and styles.type.italic },
-      Typedef      = { fg = scheme.base.magenta },
+      Type         = { fg = scheme.base.aqua,  italic = styles.type and styles.type.italic },
+      StorageClass = { fg = scheme.base.aqua,  italic = styles.type and styles.type.italic },
+      Structure    = { fg = scheme.base.aqua,  italic = styles.type and styles.type.italic },
+      Typedef      = { fg = scheme.base.purple },
 
       -- Special
       Special      = { fg = scheme.base.orange },
@@ -60,7 +60,7 @@ return {
 
       -- Errors & todos
       Error = { fg = scheme.inputValidation.errorForeground },
-      Todo  = { bg = scheme.editor.background, fg = scheme.base.magenta, bold = true },
+      Todo  = { bg = scheme.editor.background, fg = scheme.base.purple, bold = true },
       Tag   = { fg = scheme.base.red },
 
       -- Title

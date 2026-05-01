@@ -80,8 +80,8 @@ vim.cmd.colorscheme("kape")
 | `green` | `#b4c76e` | ![#b4c76e](https://placehold.co/16x16/b4c76e/b4c76e.png) |
 | `yellow` | `#e7bb5c` | ![#e7bb5c](https://placehold.co/16x16/e7bb5c/e7bb5c.png) |
 | `blue` | `#7b8fd4` | ![#7b8fd4](https://placehold.co/16x16/7b8fd4/7b8fd4.png) |
-| `violet` | `#b072e6` | ![#b072e6](https://placehold.co/16x16/b072e6/b072e6.png) |
-| `cyan` | `#72c4b8` | ![#72c4b8](https://placehold.co/16x16/72c4b8/72c4b8.png) |
+| `purple` | `#b06880` | ![#b06880](https://placehold.co/16x16/b06880/b06880.png) |
+| `aqua` | `#689d8a` | ![#689d8a](https://placehold.co/16x16/689d8a/689d8a.png) |
 
 ## License
 

@@ -22,10 +22,10 @@ return {
             },
             TelescopeMultiSelection = {
                 bg = c.diffEditor.modifiedLineBackground,
-                fg = c.base.cyan
+                fg = c.base.aqua
             },
             TelescopeMultiIcon = {
-                fg = c.base.cyan
+                fg = c.base.aqua
             },
 
             -- Global
@@ -60,7 +60,7 @@ return {
                 fg = prompt_bg
             },
             TelescopePromptPrefix = {
-                fg = c.base.cyan
+                fg = c.base.aqua
             },
             TelescopePromptCounter = {
                 fg = c.base.red,
@@ -136,7 +136,7 @@ return {
                 fg = c.base.white
             },
             TelescopeResultsStruct = {
-                fg = c.base.cyan
+                fg = c.base.aqua
             },
             TelescopeResultsVariable = {
                 fg = c.base.white

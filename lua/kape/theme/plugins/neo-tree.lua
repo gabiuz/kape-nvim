@@ -35,7 +35,7 @@ return {
       NeoTreeFileName             = { fg = c.sideBar.foreground },
       NeoTreeFileNameOpened       = { fg = c.sideBar.foreground,             bold = true },
       NeoTreeFileIcon             = { fg = c.sideBar.foreground },
-      NeoTreeSymbolicLinkTarget   = { link = "KapeCyan" },
+      NeoTreeSymbolicLinkTarget   = { link = "KapeAqua" },
 
       -- Hidden / faded
       NeoTreeDotfile              = { link = "KapeGrey" },
@@ -49,7 +49,7 @@ return {
 
       -- Modified / filter
       NeoTreeModified             = { link = "KapeYellow" },
-      NeoTreeFilterTerm           = { link = "KapeCyan" },
+      NeoTreeFilterTerm           = { link = "KapeAqua" },
       NeoTreeBufferNumber         = { link = "KapeOrange" },
       NeoTreePreview              = { link = "Search" },
 

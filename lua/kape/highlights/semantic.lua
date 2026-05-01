@@ -11,9 +11,9 @@ local M = function(p, opts)
         orange = p.accent2 or p.orange,
         yellow = p.accent3 or p.yellow,
         green = p.accent4 or p.green,
-        cyan = p.accent5 or p.cyan,
+        aqua = p.accent5 or p.aqua or p.cyan,
         blue = p.blue,
-        violet = p.accent6 or p.violet,
+        purple = p.accent6 or p.purple or p.violet,
         sign_bg = p.dimmed5 or p.bg1,
         current_word_bg = p.dimmed5 or p.bg2,
         inlay_bg = p.dark1 or p.bg1,
@@ -44,14 +44,20 @@ local M = function(p, opts)
     hl(0, "KapeGreen", {
         fg = colors.green
     })
-    hl(0, "KapeCyan", {
-        fg = colors.cyan
+    hl(0, "KapeAqua", {
+        fg = colors.aqua
     })
     hl(0, "KapeBlue", {
         fg = colors.blue
     })
+    hl(0, "KapePurple", {
+        fg = colors.purple
+    })
+    hl(0, "KapeCyan", {
+        fg = colors.aqua
+    })
     hl(0, "KapeViolet", {
-        fg = colors.violet
+        fg = colors.purple
     })
 
     -- Italic variants (respects italic_comments option)
@@ -68,16 +74,24 @@ local M = function(p, opts)
         fg = colors.green,
         italic = italic
     })
-    hl(0, "KapeCyanItalic", {
-        fg = colors.cyan,
+    hl(0, "KapeAquaItalic", {
+        fg = colors.aqua,
         italic = italic
     })
     hl(0, "KapeBlueItalic", {
         fg = colors.blue,
         italic = italic
     })
+    hl(0, "KapePurpleItalic", {
+        fg = colors.purple,
+        italic = italic
+    })
+    hl(0, "KapeCyanItalic", {
+        fg = colors.aqua,
+        italic = italic
+    })
     hl(0, "KapeVioletItalic", {
-        fg = colors.violet,
+        fg = colors.purple,
         italic = italic
     })
 
@@ -98,16 +112,24 @@ local M = function(p, opts)
         fg = colors.green,
         bg = colors.sign_bg
     })
-    hl(0, "KapeCyanSign", {
-        fg = colors.cyan,
+    hl(0, "KapeAquaSign", {
+        fg = colors.aqua,
         bg = colors.sign_bg
     })
     hl(0, "KapeBlueSign", {
         fg = colors.blue,
         bg = colors.sign_bg
     })
+    hl(0, "KapePurpleSign", {
+        fg = colors.purple,
+        bg = colors.sign_bg
+    })
+    hl(0, "KapeCyanSign", {
+        fg = colors.aqua,
+        bg = colors.sign_bg
+    })
     hl(0, "KapeVioletSign", {
-        fg = colors.violet,
+        fg = colors.purple,
         bg = colors.sign_bg
     })
 
@@ -141,7 +163,7 @@ local M = function(p, opts)
             bg = colors.bg_visual_blue
         })
         hl(0, "KapeVirtualTextHint", {
-            fg = colors.cyan,
+            fg = colors.aqua,
             bg = colors.bg_visual_green
         })
     end
@@ -161,7 +183,7 @@ local M = function(p, opts)
     })
     hl(0, "KapeHintText", {
         undercurl = true,
-        sp = colors.cyan
+        sp = colors.aqua
     })
 
     -- Float diagnostic (no background, just color)
@@ -175,7 +197,7 @@ local M = function(p, opts)
         fg = colors.blue
     })
     hl(0, "KapeHintFloat", {
-        fg = colors.cyan
+        fg = colors.aqua
     })
 
     -- Current word 

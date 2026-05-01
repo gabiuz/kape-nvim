@@ -161,6 +161,8 @@
 ---@field blue    string
 ---@field magenta string
 ---@field cyan    string
+---@field purple  string
+---@field aqua    string
 ---@field white   string
 ---@field dimmed1 string
 ---@field dimmed2 string
@@ -442,6 +444,8 @@ function M.build(palette, config)
     blue    = p.blue,
     magenta = p.accent6,
     cyan    = p.accent5,
+    purple  = p.accent6,
+    aqua    = p.accent5,
     white   = p.text,
     dimmed1 = p.dimmed1,
     dimmed2 = p.dimmed2,
