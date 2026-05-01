@@ -21,77 +21,77 @@ return {
       ["@preproc"]                = { link = "@keyword.directive" },           -- @deprecated
       ["@keyword.directive.define"] = { fg = scheme.base.orange },
       ["@define"]                 = { link = "@keyword.directive.define" },    -- @deprecated
-      ["@operator"]               = { fg = scheme.base.white },
+      ["@operator"]               = { fg = scheme.base.green },
 
       -- Punctuation
-      ["@punctuation.delimiter"]  = { fg = scheme.base.white },
-      ["@punctuation.bracket"]    = { fg = scheme.base.white },
-      ["@punctuation.special"]    = { fg = scheme.base.white },
+      ["@punctuation.delimiter"]  = { fg = scheme.base.green },
+      ["@punctuation.bracket"]    = { fg = scheme.base.green },
+      ["@punctuation.special"]    = { fg = scheme.base.green },
 
       -- Literals
       ["@string"]                 = { fg = scheme.base.green },
-      ["@string.regexp"]          = { fg = scheme.base.yellow },
+      ["@string.regexp"]          = { fg = scheme.base.green },
       ["@string.regex"]           = { link = "@string.regexp" },               -- @deprecated
-      ["@string.escape"]          = { fg = scheme.base.yellow },
-      ["@string.special"]         = { fg = scheme.base.yellow },
+      ["@string.escape"]          = { fg = scheme.base.green },
+      ["@string.special"]         = { fg = scheme.base.green },
       ["@character"]              = { fg = scheme.base.green },
-      ["@character.special"]      = { fg = scheme.base.yellow },
-      ["@boolean"]                = { fg = scheme.base.yellow },
-      ["@number"]                 = { fg = scheme.base.yellow },
-      ["@number.float"]           = { fg = scheme.base.yellow },
+      ["@character.special"]      = { fg = scheme.base.purple },
+      ["@boolean"]                = { fg = scheme.base.purple },
+      ["@number"]                 = { fg = scheme.base.purple },
+      ["@number.float"]           = { fg = scheme.base.purple },
       ["@float"]                  = { link = "@number.float" },                -- @deprecated
 
       -- Functions
-      ["@function"]               = { fg = scheme.base.orange, bold = true },
-      ["@function.builtin"]       = { fg = scheme.base.orange, bold = true },
+      ["@function"]               = { fg = scheme.base.orange },
+      ["@function.builtin"]       = { fg = scheme.base.orange },
       ["@function.call"]          = { fg = scheme.base.orange },
       ["@function.macro"]         = { fg = scheme.base.orange },
-      ["@function.method"]        = { fg = scheme.base.orange, bold = true },
+      ["@function.method"]        = { fg = scheme.base.orange },
       ["@method"]                 = { link = "@function.method" },             -- @deprecated
       ["@function.method.call"]   = { fg = scheme.base.orange },
       ["@method.call"]            = { link = "@function.method.call" },        -- @deprecated
       ["@constructor"]            = { fg = scheme.base.orange },
-      ["@variable.parameter"]     = { fg = scheme.base.yellow },
+      ["@variable.parameter"]     = { fg = scheme.base.aqua },
       ["@parameter"]              = { link = "@variable.parameter" },          -- @deprecated
 
       -- Keywords
       ["@keyword"]                = { fg = scheme.base.red },
       ["@keyword.function"]       = { fg = scheme.base.red },
-      ["@keyword.operator"]       = { fg = scheme.base.white },
+      ["@keyword.operator"]       = { fg = scheme.base.green },
       ["@keyword.return"]         = { fg = scheme.base.red },
-      ["@keyword.conditional"]    = { fg = scheme.base.purple },
+      ["@keyword.conditional"]    = { fg = scheme.base.red },
       ["@conditional"]            = { link = "@keyword.conditional" },         -- @deprecated
-      ["@keyword.repeat"]         = { fg = scheme.base.purple },
+      ["@keyword.repeat"]         = { fg = scheme.base.red },
       ["@repeat"]                 = { link = "@keyword.repeat" },              -- @deprecated
-      ["@keyword.debug"]          = { fg = scheme.base.purple },
+      ["@keyword.debug"]          = { fg = scheme.base.red },
       ["@debug"]                  = { link = "@keyword.debug" },               -- @deprecated
-      ["@label"]                  = { fg = scheme.base.purple },
-      ["@keyword.import"]         = { fg = scheme.base.purple },
+      ["@label"]                  = { fg = scheme.base.red },
+      ["@keyword.import"]         = { fg = scheme.base.red },
       ["@include"]                = { link = "@keyword.import" },              -- @deprecated
-      ["@keyword.exception"]      = { fg = scheme.base.purple },
+      ["@keyword.exception"]      = { fg = scheme.base.red },
       ["@exception"]              = { link = "@keyword.exception" },           -- @deprecated
-      ["@keyword.storage"]        = { fg = scheme.base.aqua },
+      ["@keyword.storage"]        = { fg = scheme.base.orange },
       ["@storageclass"]           = { link = "@keyword.storage" },             -- @deprecated
 
       -- Types
-      ["@type"]                   = { fg = scheme.base.aqua, italic = italic_type },
-      ["@type.builtin"]           = { fg = scheme.base.aqua, italic = italic_type },
-      ["@type.definition"]        = { fg = scheme.base.aqua, italic = italic_type },
-      ["@type.qualifier"]         = { fg = scheme.base.aqua },
+      ["@type"]                   = { fg = scheme.base.red, italic = italic_type },
+      ["@type.builtin"]           = { fg = scheme.base.red, italic = italic_type },
+      ["@type.definition"]        = { fg = scheme.base.red, italic = italic_type },
+      ["@type.qualifier"]         = { fg = scheme.base.red },
       ["@attribute"]              = { fg = scheme.base.orange },
-      ["@variable.member"]        = { fg = scheme.base.yellow },
+      ["@variable.member"]        = { fg = scheme.base.white },
       ["@field"]                  = { link = "@variable.member" },             -- @deprecated
-      ["@property"]               = { fg = scheme.base.yellow },
+      ["@property"]               = { fg = scheme.base.white },
 
       -- Identifiers
-      ["@variable"]               = { fg = scheme.base.yellow },
-      ["@variable.builtin"]       = { fg = scheme.base.yellow, italic = italic_type },
-      ["@constant"]               = { fg = scheme.base.yellow },
-      ["@constant.builtin"]       = { fg = scheme.base.yellow, italic = italic_type },
-      ["@constant.macro"]         = { fg = scheme.base.purple, italic = italic_type },
-      ["@module"]                 = { fg = scheme.base.purple, italic = italic_type },
+      ["@variable"]               = { fg = scheme.base.aqua },
+      ["@variable.builtin"]       = { fg = scheme.base.aqua, italic = italic_type },
+      ["@constant"]               = { fg = scheme.base.purple },
+      ["@constant.builtin"]       = { fg = scheme.base.purple, italic = italic_type },
+      ["@constant.macro"]         = { fg = scheme.base.orange, italic = italic_type },
+      ["@module"]                 = { fg = scheme.base.aqua, italic = italic_type },
       ["@namespace"]              = { link = "@module" },                      -- @deprecated
-      ["@string.special.symbol"]  = { fg = scheme.base.yellow },
+      ["@string.special.symbol"]  = { fg = scheme.base.green },
       ["@symbol"]                 = { link = "@string.special.symbol" },       -- @deprecated
 
       -- Markup / Text
@@ -112,16 +112,16 @@ return {
       ["@markup.heading.5.markdown"] = { fg = scheme.base.aqua,    bold = true },
       ["@markup.heading.6.markdown"] = { fg = scheme.base.blue,    bold = true },
       ["@text.title"]             = { link = "@markup.heading" },              -- @deprecated
-      ["@markup.raw"]             = { fg = scheme.base.green },
+      ["@markup.raw"]             = { fg = scheme.base.dimmed2 },
       ["@text.literal"]           = { link = "@markup.raw" },                  -- @deprecated
       ["@markup.link.url"]        = { fg = scheme.base.blue, underline = true, sp = scheme.base.blue },
       ["@text.uri"]               = { link = "@markup.link.url" },             -- @deprecated
-      ["@markup.link.label"]      = { fg = scheme.base.aqua },
-      ["@markup.link"]            = { fg = scheme.base.aqua },
+      ["@markup.link.label"]      = { fg = scheme.base.blue },
+      ["@markup.link"]            = { fg = scheme.base.blue },
       ["@text.reference"]         = { link = "@markup.link" },                 -- @deprecated
       ["@markup.math"]            = { fg = scheme.base.yellow },
       ["@text.math"]              = { link = "@markup.math" },                 -- @deprecated
-      ["@markup.environment"]     = { fg = scheme.base.purple },
+      ["@markup.environment"]     = { fg = scheme.base.orange },
       ["@text.environment"]       = { link = "@markup.environment" },          -- @deprecated
       ["@markup.environment.name"] = { fg = scheme.base.orange },
       ["@text.environment.name"]  = { link = "@markup.environment.name" },     -- @deprecated
@@ -149,17 +149,17 @@ return {
       ["@diff.delta"]      = { link = "DiffChange" },
 
       -- Tags (HTML / JSX / XML)
-      ["@tag"]             = { fg = scheme.base.red },
+      ["@tag"]             = { fg = scheme.base.orange },
       ["@tag.attribute"]   = { fg = scheme.base.orange },
-      ["@tag.delimiter"]   = { fg = scheme.base.white },
+      ["@tag.delimiter"]   = { fg = scheme.base.orange },
 
       -- Conceal
       ["@conceal"]         = { fg = scheme.base.dimmed3 },
 
       -- Language-specific
-      ["@constant.git_rebase"] = { fg = scheme.base.aqua },
-      ["@property.yaml"]       = { fg = scheme.base.aqua },
-      ["@character.printf"]    = { fg = scheme.base.yellow },
+      ["@constant.git_rebase"] = { fg = scheme.base.purple },
+      ["@property.yaml"]       = { fg = scheme.base.white },
+      ["@character.printf"]    = { fg = scheme.base.purple },
     }
   end,
 }
