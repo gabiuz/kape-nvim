@@ -57,6 +57,8 @@ require("kape").setup({
 vim.cmd.colorscheme("kape")
 ```
 
+Note: `transparent_background` is deprecated and no longer supported. Use `transparent`.
+
 ## Supported Plugins
 
 | Plugin | Status |

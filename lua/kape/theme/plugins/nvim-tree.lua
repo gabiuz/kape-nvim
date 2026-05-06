@@ -7,7 +7,9 @@ return {
 
   highlights = function(c, config)
     local is_clear  = vim.tbl_contains(config.background_clear or {}, "nvim-tree")
-    local sidebar_bg = is_clear and c.editor.background or c.sideBar.background
+    local transparent = config.transparent
+    local sidebar_bg = transparent and "NONE" or (is_clear and c.editor.background or c.sideBar.background)
+    local popup_bg = transparent and "NONE" or c.editorSuggestWidget.background
 
     -- stylua: ignore
     return {
@@ -53,7 +55,7 @@ return {
       NvimTreeLspDiagnosticsHint        = { link = "KapeAquaSign" },
 
       -- Misc
-      NvimTreePopup            = { fg = c.base.white,   bg = c.editorSuggestWidget.background },
+      NvimTreePopup            = { fg = c.base.white,   bg = popup_bg },
       NvimTreeBookmark         = { link = "KapePurple" },
       NvimTreeLiveFilterPrefix = { link = "KapeRed" },
       NvimTreeLiveFilterValue  = { fg = c.base.white, bold = true },

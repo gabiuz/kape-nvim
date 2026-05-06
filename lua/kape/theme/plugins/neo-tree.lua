@@ -7,7 +7,9 @@ return {
 
   highlights = function(c, config)
     local is_clear  = vim.tbl_contains(config.background_clear or {}, "neo-tree")
-    local sidebar_bg = is_clear and c.editor.background or c.sideBar.background
+    local transparent = config.transparent
+    local sidebar_bg = transparent and "NONE" or (is_clear and c.editor.background or c.sideBar.background)
+    local float_bg = transparent and "NONE" or c.editorSuggestWidget.background
 
     -- stylua: ignore
     return {
@@ -58,9 +60,9 @@ return {
       NeoTreeFileStatsHeader      = { fg = c.base.dimmed3, bold = true, italic = true },
 
       -- Float / popup
-      NeoTreeFloatNormal          = { fg = c.editorSuggestWidget.foreground,  bg = c.editorSuggestWidget.background },
+      NeoTreeFloatNormal          = { fg = c.editorSuggestWidget.foreground,  bg = float_bg },
       NeoTreeFloatBorder          = { fg = c.editorSuggestWidget.background,  bg = sidebar_bg },
-      NeoTreeTitleBar             = { fg = c.base.yellow,                      bg = c.editorSuggestWidget.background, bold = true },
+      NeoTreeTitleBar             = { fg = c.base.yellow,                      bg = float_bg, bold = true },
       NeoTreeFloatTitle           = { fg = c.base.yellow,                      bg = sidebar_bg, bold = true },
 
       -- Tabs

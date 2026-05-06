@@ -6,27 +6,30 @@ return {
 
   highlights = function(c, config)
     local is_clear = vim.tbl_contains(config.background_clear or {}, "fzf-lua")
-    local bg       = is_clear and "NONE" or c.editor.background
-    local panel_bg = c.editorSuggestWidget.background
+    local transparent = config.transparent
+    local bg       = (transparent or is_clear) and "NONE" or c.editor.background
+    local panel_bg = transparent and "NONE" or c.editorSuggestWidget.background
+    local prompt_bg = transparent and "NONE" or c.sideBar.background
+    local border_fg = transparent and c.editorSuggestWidget.background or panel_bg
 
     -- stylua: ignore
     return {
       -- Main window
       FzfLuaNormal       = { bg = panel_bg, fg = c.base.white },
-      FzfLuaBorder       = { bg = bg,        fg = panel_bg },
+      FzfLuaBorder       = { bg = bg,        fg = border_fg },
       FzfLuaTitle        = { bg = c.base.yellow, fg = c.base.black, bold = true },
       FzfLuaBackdrop     = { bg = bg },
       FzfLuaCursor       = { link = "IncSearch" },
 
       -- Prompt / header
-      FzfLuaPrompt       = { bg = c.sideBar.background, fg = c.base.aqua, bold = true },
-      FzfLuaSearch       = { bg = c.sideBar.background, fg = c.base.white },
+      FzfLuaPrompt       = { bg = prompt_bg, fg = c.base.aqua, bold = true },
+      FzfLuaSearch       = { bg = prompt_bg, fg = c.base.white },
       FzfLuaHeaderBind   = { fg = c.base.yellow },
       FzfLuaHeaderText   = { fg = c.base.dimmed2 },
 
       -- Preview window
       FzfLuaPreviewNormal = { bg = bg, fg = c.base.white },
-      FzfLuaPreviewBorder = { bg = bg, fg = panel_bg },
+      FzfLuaPreviewBorder = { bg = bg, fg = border_fg },
       FzfLuaPreviewTitle  = { bg = c.base.yellow, fg = c.base.black, bold = true },
 
       -- fzf internal colors (passed to fzf via --color)

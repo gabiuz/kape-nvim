@@ -223,7 +223,7 @@ local M = {}
 ---@return Kape.Scheme
 function M.build(palette, config)
   local p           = palette
-  local transparent = config.transparent_background
+  local transparent = config.transparent
 
   ---@type Kape.Scheme
   local scheme = {}

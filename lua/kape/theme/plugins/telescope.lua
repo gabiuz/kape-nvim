@@ -5,9 +5,13 @@ return {
 
     highlights = function(c, config)
         local is_clear = vim.tbl_contains(config.background_clear or {}, "telescope")
-        local bg = is_clear and "NONE" or c.base.black
-        local panel_bg = c.editorSuggestWidget.background
-        local prompt_bg = c.sideBar.background
+        local transparent = config.transparent
+        local bg = (transparent or is_clear) and "NONE" or c.base.black
+        local panel_bg = transparent and "NONE" or c.editorSuggestWidget.background
+        local prompt_bg = transparent and "NONE" or c.sideBar.background
+        local border_fg = transparent and c.editorSuggestWidget.background or bg
+        local panel_border_fg = transparent and c.editorSuggestWidget.background or panel_bg
+        local prompt_border_fg = transparent and c.editorSuggestWidget.background or prompt_bg
 
         -- stylua: ignore
         return {
@@ -35,7 +39,7 @@ return {
             },
             TelescopeBorder = {
                 bg = bg,
-                fg = bg
+                fg = border_fg
             },
             TelescopeMatching = {
                 fg = c.base.blue,
@@ -57,7 +61,7 @@ return {
             },
             TelescopePromptBorder = {
                 bg = bg,
-                fg = prompt_bg
+                fg = prompt_border_fg
             },
             TelescopePromptPrefix = {
                 fg = c.base.aqua
@@ -79,7 +83,7 @@ return {
             },
             TelescopePreviewBorder = {
                 bg = bg,
-                fg = panel_bg
+                fg = panel_border_fg
             },
 
             -- Results
@@ -94,7 +98,7 @@ return {
             },
             TelescopeResultsBorder = {
                 bg = bg,
-                fg = panel_bg
+                fg = panel_border_fg
             },
 
             -- Result row content

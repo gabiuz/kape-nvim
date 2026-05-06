@@ -17,7 +17,7 @@
 ---@field bufferline? Kape.Config.Plugins.Bufferline
 
 ---@class Kape.Config
----@field transparent_background?   boolean
+---@field transparent?              boolean
 ---@field terminal_colors?          boolean
 ---@field styles?                   Kape.Config.Styles
 ---@field diagnostic_virtual_text?  "colored"|"grey"
@@ -29,7 +29,7 @@
 
 ---@type Kape.Config
 local defaults = {
-  transparent_background  = false,
+  transparent             = false,
   terminal_colors         = true,
   styles = {
     comment   = { italic = true },
